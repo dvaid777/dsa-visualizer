@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Visualizer | Interactive Algorithm Learning</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-project-diagram"></i>
+                <h1 class="logo-text">DSA Visualizer</h1>
+            </div>
+            
+            <div class="header-controls">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="https://github.com" target="_blank" class="github-link" aria-label="View on GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-code"></i> Algorithms</h2>
+                <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <div class="algorithms-list">
+                <!-- Algorithms will be populated by JavaScript -->
+                <div class="category">
+                    <h3 class="category-title">
+                        <i class="fas fa-sort-amount-down"></i>
+                        Sorting Algorithms
+                    </h3>
+                    <ul class="algorithm-items">
+                        <!-- Will be populated by JS -->
+                    </ul>
+                </div>
+                
+                <div class="category">
+                    <h3 class="category-title">
+                        <i class="fas fa-search"></i>
+                        Searching Algorithms
+                    </h3>
+                    <ul class="algorithm-items">
+                        <!-- Will be populated by JS -->
+                    </ul>
+                </div>
+                
+                
+                
+                
+            </div>
+        </nav>
+
+        <!-- Content Area -->
+        <div class="content-area">
+            <!-- Visualization Area -->
+            <section class="visualization-section">
+                <div class="section-header">
+                    <h2 id="algorithmTitle">Select an Algorithm</h2>
+                    <div class="array-controls">
+                        <button class="btn btn-secondary" id="generateArray">
+                            <i class="fas fa-redo"></i> Generate New Array
+                        </button>
+                        <div class="array-size-control">
+                            <label for="arraySize">Size:</label>
+                            <input type="range" id="arraySize" min="5" max="50" value="20">
+                            <span id="arraySizeValue">20</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="visualization-container">
+                    <div id="visualization" class="visualization">
+                        <!-- Array visualization will be rendered here -->
+                        <div class="placeholder">
+                            <i class="fas fa-code-branch fa-3x"></i>
+                            <p>Select an algorithm from the sidebar to start visualization</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Control Panel -->
+            <section class="control-panel">
+                <div class="controls">
+                    <button class="btn btn-primary" id="playBtn">
+                        <i class="fas fa-play"></i> Play
+                    </button>
+                    <button class="btn btn-secondary" id="pauseBtn" disabled>
+                        <i class="fas fa-pause"></i> Pause
+                    </button>
+                    <button class="btn btn-secondary" id="stepBtn">
+                        <i class="fas fa-step-forward"></i> Step
+                    </button>
+                    <button class="btn btn-secondary" id="resetBtn">
+                        <i class="fas fa-undo"></i> Reset
+                    </button>
+                    
+                    <div class="speed-control">
+                        <label for="speedControl">Speed:</label>
+                        <input type="range" id="speedControl" min="1" max="10" value="5">
+                        <span id="speedValue">Medium</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Code and Explanation Panels -->
+            <div class="info-panels">
+                <!-- Code Panel -->
+                <section class="code-panel">
+                    <div class="panel-header">
+                        <h3><i class="fas fa-code"></i> Pseudo Code</h3>
+                    </div>
+                    <div class="panel-content">
+                        <pre id="pseudoCode"><code>// Select an algorithm to view its pseudo code</code></pre>
+                    </div>
+                </section>
+
+                <!-- Explanation Panel -->
+                <section class="explanation-panel">
+                    <div class="panel-header">
+                        <h3><i class="fas fa-info-circle"></i> Algorithm Explanation</h3>
+                    </div>
+                    <div class="panel-content">
+                        <div class="complexity">
+                            <div class="complexity-item">
+                                <span class="complexity-label">Time Complexity:</span>
+                                <span class="complexity-value" id="timeComplexity">-</span>
+                            </div>
+                            <div class="complexity-item">
+                                <span class="complexity-label">Space Complexity:</span>
+                                <span class="complexity-value" id="spaceComplexity">-</span>
+                            </div>
+                        </div>
+                        <div class="explanation-content" id="algorithmExplanation">
+                            <p>Select an algorithm from the sidebar to see its explanation, time complexity, and space complexity analysis.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript Files -->
+    <script src="script.js"></script>
+</body>
+</html>
